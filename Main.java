@@ -3,18 +3,22 @@ import javax.swing.JFrame;
 import javax.swing.Timer;
 
 public class Main {
-    MyKeyListener keyListener;
-    MyMouseListener mouseListener;
-    MyActionListener actionListener;
-    Timer timer;
-    MyPanel panel;
+    public MyKeyListener keyListener;
+    public MyMouseListener mouseListener;
+    public MyActionListener actionListener;
+    public Timer timer;
+    public MyPanel panel;
+
+    public Player player;
 
     public Main(){
+        player = new Player("images/player.png", 50, 50);
+
         keyListener = new MyKeyListener();
         mouseListener = new MyMouseListener();
         actionListener = new MyActionListener();
         timer = new Timer(Constants.DELAY, actionListener);
-        panel = new MyPanel();
+        panel = new MyPanel(player);
 
         setUpFrame();
     }

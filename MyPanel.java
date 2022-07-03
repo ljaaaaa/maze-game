@@ -1,12 +1,14 @@
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 public class MyPanel extends JPanel {
 
-    public MyPanel(){
+    public Player player;
+
+    public MyPanel(Player player){
         setBounds(Constants.FRAME_BOUNDS);
+        this.player = player;
     }
 
     @Override
@@ -14,6 +16,12 @@ public class MyPanel extends JPanel {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D)g;
 
-        g2d.drawImage(new ImageIcon("images/image.png").getImage(), 0, 0, 100, 100, null);
+        drawBackground(g2d);
+        player.drawItem(g2d);
+    }
+
+    public void drawBackground(Graphics2D g2d){
+        g2d.setColor(Constants.GRASS);
+        g2d.fillRect(0, 0, Constants.FRAME_WIDTH, Constants.FRAME_HEIGHT);
     }
 }
