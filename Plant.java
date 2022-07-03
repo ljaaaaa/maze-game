@@ -1,10 +1,11 @@
 import java.awt.Graphics2D;
 
-public class Player extends Item {
- 
-    public Player(String imageName, int x, int y){
+public class Plant extends Item{
+
+    public Plant(String imageName, int x, int y) {
         super(imageName, x, y);
-        setSize(Constants.PLAYER_SIZE);
+        setSize(Constants.BUSH_SIZE);
+       
     }
 
     @Override
@@ -13,4 +14,5 @@ public class Player extends Item {
         g2d.fillRect(x, y, width, height);
 
     }
+    
 }
