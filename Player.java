@@ -3,10 +3,12 @@ import java.awt.Graphics2D;
 public class Player extends Item {
  
     public static final int SPEED = 3;
+    public static final int WIDTH = Constants.FRAME_WIDTH/16;
+    public static final int HEIGHT = Constants.FRAME_HEIGHT/10;
 
     public Player(String imageName, int x, int y){
         super(imageName, x, y);
-        setSize(Constants.PLAYER_SIZE);
+        setSize(WIDTH, HEIGHT);
         centerPlayer();
     }
 

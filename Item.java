@@ -39,9 +39,4 @@ public class Item {
         this.width = width;
         this.height = height;
     }
-
-    public void setSize(Size size){
-        this.width = size.width;
-        this.height = size.height;
-    }
 }

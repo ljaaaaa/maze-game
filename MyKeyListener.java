@@ -16,21 +16,21 @@ public class MyKeyListener implements KeyListener {
     public void keyPressed(KeyEvent e) { 
         pressedKeys.add(e.getKeyCode());
         Point offset = new Point();
-
+        
         if (!pressedKeys.isEmpty()) {
             for (Iterator<Integer> it = pressedKeys.iterator(); it.hasNext();) {
                 switch (it.next()) {
                     case KeyEvent.VK_UP:
-                        offset.y = -1;
+                        offset.y-=1;
                         break;
                     case KeyEvent.VK_LEFT:
-                        offset.x = -1;
+                        offset.x-=1;
                         break;
                     case KeyEvent.VK_DOWN:
-                        offset.y = 1;
+                        offset.y+=1;
                         break;
                     case KeyEvent.VK_RIGHT:
-                        offset.x = 1;
+                        offset.x+=1;
                         break;
                 }
             }
