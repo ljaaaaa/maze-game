@@ -4,11 +4,9 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 public class MyPanel extends JPanel {
-    public Player player;
 
-    public MyPanel(Player player){
+    public MyPanel(){
         setBounds(Constants.FRAME_BOUNDS);
-        this.player = player;
     }
 
     @Override
@@ -17,7 +15,7 @@ public class MyPanel extends JPanel {
         Graphics2D g2d = (Graphics2D)g;
 
         drawBackground(g2d);
-        player.drawItem(g2d);
+        Statics.player.drawItem(g2d);
 
         Rectangle bounds = Constants.MOVE_BOUNDS;
         g2d.drawRect(bounds.x, bounds.y, bounds.width, bounds.height);
