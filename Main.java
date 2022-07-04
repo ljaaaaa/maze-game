@@ -10,15 +10,17 @@ public class Main {
     public MyPanel panel;
 
     public Player player;
+    public Plant bush;
 
     public Main(){
         player = new Player("images/player.png", 50, 50);
+        bush = new Plant("images/bush.png", 150, 150);
 
         keyListener = new MyKeyListener();
         mouseListener = new MyMouseListener();
         actionListener = new MyActionListener();
         timer = new Timer(Constants.DELAY, actionListener);
-        panel = new MyPanel(player);
+        panel = new MyPanel(player, bush);
 
         setUpFrame();
     }

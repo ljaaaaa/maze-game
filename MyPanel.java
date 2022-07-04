@@ -5,10 +5,12 @@ import java.awt.Graphics2D;
 public class MyPanel extends JPanel {
 
     public Player player;
+    public Plant bush;
 
-    public MyPanel(Player player){
+    public MyPanel(Player player, Plant bush){
         setBounds(Constants.FRAME_BOUNDS);
         this.player = player;
+        this.bush = bush;
     }
 
     @Override
@@ -18,6 +20,7 @@ public class MyPanel extends JPanel {
 
         drawBackground(g2d);
         player.drawItem(g2d);
+        bush.drawItem(g2d);
     }
 
     public void drawBackground(Graphics2D g2d){

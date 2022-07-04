@@ -10,7 +10,7 @@ public class Plant extends Item{
 
     @Override
     public void drawItem(Graphics2D g2d){
-        g2d.setColor(Constants.PLAYER);
+        g2d.setColor(Constants.BUSH);
         g2d.fillRect(x, y, width, height);
     }
 }
