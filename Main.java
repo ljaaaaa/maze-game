@@ -3,14 +3,22 @@ import javax.swing.JFrame;
 import javax.swing.Timer;
 
 public class Main {
-    
-    public Player player;
-
+    public MyKeyListener keyListener;
+    public MyMouseListener mouseListener;
+    public MyActionListener actionListener;
+    public Timer timer;
     public MyPanel panel;
 
+    public Player player;
+    
     public Main(){
-        player = new Player("images/player.png", 50, 50); 
-        panel = new MyPanel();  
+        player = new Player("images/player.png", 50, 50);
+        panel = new MyPanel(player);
+        
+        keyListener = new MyKeyListener();
+        mouseListener = new MyMouseListener();
+        actionListener = new MyActionListener(panel);
+        timer = new Timer(Constants.DELAY, actionListener);
         setUpFrame();
     }
 
@@ -20,9 +28,9 @@ public class Main {
         f.setSize(Constants.FRAME_WIDTH, Constants.FRAME_HEIGHT+37);
         f.setLayout(null);
 
-        f.addMouseListener(Statics.mouseListener);
+        f.addMouseListener(mouseListener);
 
-        f.addKeyListener(Statics.keyListener);
+        f.addKeyListener(keyListener);
         f.setFocusable(true);
 
         f.add(panel);
@@ -32,6 +40,6 @@ public class Main {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
 
-        Statics.timer.start();
+        timer.start();
     }
 }
