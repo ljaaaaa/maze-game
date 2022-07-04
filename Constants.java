@@ -15,10 +15,7 @@ public class Constants {
     //Items
     public static final Size BUSH_SIZE = new Size(FRAME_WIDTH/10, FRAME_WIDTH/10);
     public static final Size PLAYER_SIZE = new Size(FRAME_WIDTH/16, FRAME_WIDTH/10);
-
-    //ActionListener
-    public static final int DELAY = 100;
-
+    
     //Colors
     public static final Color PLAYER = new Color(255, 0, 0);
     public static final Color GRASS = new Color(132, 191, 119);

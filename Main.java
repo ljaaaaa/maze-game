@@ -15,10 +15,10 @@ public class Main {
         player = new Player("images/player.png", 50, 50);
         panel = new MyPanel(player);
         
-        keyListener = new MyKeyListener();
+        keyListener = new MyKeyListener(player);
         mouseListener = new MyMouseListener();
         actionListener = new MyActionListener(panel);
-        timer = new Timer(Constants.DELAY, actionListener);
+        timer = new Timer(MyActionListener.DELAY, actionListener);
         setUpFrame();
     }
 

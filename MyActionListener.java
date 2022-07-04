@@ -3,7 +3,8 @@ import java.awt.event.ActionEvent;
 
 public class MyActionListener implements ActionListener{
 
-    MyPanel panel;
+    public static final int DELAY = 1;
+    public MyPanel panel;
 
     public MyActionListener(MyPanel panel){
         this.panel = panel;
