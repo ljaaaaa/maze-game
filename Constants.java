@@ -8,7 +8,7 @@ public class Constants {
     public static final Rectangle FRAME_BOUNDS = new Rectangle(0, 0, FRAME_WIDTH, FRAME_HEIGHT);
 
     //Items
-    public static final Size BUSH_SIZE = new Size(FRAME_WIDTH/16, FRAME_WIDTH/16);
+    public static final Size BUSH_SIZE = new Size(FRAME_WIDTH/10, FRAME_WIDTH/10);
     public static final Size PLAYER_SIZE = new Size(FRAME_WIDTH/16, FRAME_WIDTH/10);
 
     //ActionListener
@@ -17,5 +17,5 @@ public class Constants {
     //Colors
     public static final Color PLAYER = new Color(255, 0, 0);
     public static final Color GRASS = new Color(132, 191, 119);
-    public static final Color BUSH = new Color(0, 255, 0);
+    public static final Color BUSH = new Color(27, 117, 54);
 }
