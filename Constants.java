@@ -7,6 +7,11 @@ public class Constants {
     public static final int FRAME_HEIGHT = 600;
     public static final Rectangle FRAME_BOUNDS = new Rectangle(0, 0, FRAME_WIDTH, FRAME_HEIGHT);
 
+    //Move Area
+    public static final int MOVE_WIDTH = FRAME_WIDTH/2;
+    public static final int MOVE_HEIGHT = FRAME_HEIGHT/2;
+    public static final Rectangle MOVE_BOUNDS = new Rectangle(FRAME_WIDTH/2-MOVE_WIDTH, FRAME_HEIGHT/2-MOVE_HEIGHT, MOVE_WIDTH, MOVE_HEIGHT);
+
     //Items
     public static final Size BUSH_SIZE = new Size(FRAME_WIDTH/10, FRAME_WIDTH/10);
     public static final Size PLAYER_SIZE = new Size(FRAME_WIDTH/16, FRAME_WIDTH/10);
