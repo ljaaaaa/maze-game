@@ -12,7 +12,5 @@ public class Plant extends Item{
     public void drawItem(Graphics2D g2d){
         g2d.setColor(Constants.PLAYER);
         g2d.fillRect(x, y, width, height);
-
     }
-    
 }
