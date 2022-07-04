@@ -23,7 +23,7 @@ public class Main {
     }
 
     public void setUpFrame(){
-        JFrame f = new JFrame("Swing Template");
+        JFrame f = new JFrame("Game");
         f.setIconImage(new ImageIcon("images/image.png").getImage());
         f.setSize(Constants.FRAME_WIDTH, Constants.FRAME_HEIGHT+37);
         f.setLayout(null);
