@@ -3,12 +3,14 @@ import java.awt.event.ActionEvent;
 
 public class MyActionListener implements ActionListener{
 
-    public MyActionListener(){
+    MyPanel panel;
 
+    public MyActionListener(MyPanel panel){
+        this.panel = panel;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) { 
-  
+        panel.repaint();   
     }
 }

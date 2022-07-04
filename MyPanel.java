@@ -17,12 +17,10 @@ public class MyPanel extends JPanel {
         Graphics2D g2d = (Graphics2D)g;
 
         drawBackground(g2d);
+        player.drawItem(g2d);
 
-        g2d.setColor(Constants.PLAYER);
         Rectangle bounds = Constants.MOVE_BOUNDS;
         g2d.drawRect(bounds.x, bounds.y, bounds.width, bounds.height);
-
-        System.out.println(bounds);
     }
 
     public void drawBackground(Graphics2D g2d){

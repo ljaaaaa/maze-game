@@ -13,20 +13,19 @@ public class Main {
     
     public Main(){
         player = new Player("images/player.png", 50, 50);
-       
+        panel = new MyPanel(player);
+        
         keyListener = new MyKeyListener();
         mouseListener = new MyMouseListener();
-        actionListener = new MyActionListener();
+        actionListener = new MyActionListener(panel);
         timer = new Timer(Constants.DELAY, actionListener);
-        panel = new MyPanel(player);
-
         setUpFrame();
     }
 
     public void setUpFrame(){
         JFrame f = new JFrame("Swing Template");
         f.setIconImage(new ImageIcon("images/image.png").getImage());
-        f.setSize(Constants.FRAME_WIDTH, Constants.FRAME_HEIGHT);
+        f.setSize(Constants.FRAME_WIDTH, Constants.FRAME_HEIGHT+37);
         f.setLayout(null);
 
         f.addMouseListener(mouseListener);
