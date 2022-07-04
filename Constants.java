@@ -10,7 +10,7 @@ public class Constants {
     //Move Area
     public static final int MOVE_WIDTH = FRAME_WIDTH/2;
     public static final int MOVE_HEIGHT = FRAME_HEIGHT/2;
-    public static final Rectangle MOVE_BOUNDS = new Rectangle(FRAME_WIDTH/2-MOVE_WIDTH, FRAME_HEIGHT/2-MOVE_HEIGHT, MOVE_WIDTH, MOVE_HEIGHT);
+    public static final Rectangle MOVE_BOUNDS = new Rectangle(MOVE_WIDTH/2, MOVE_HEIGHT/2, MOVE_WIDTH, MOVE_HEIGHT);
 
     //Items
     public static final Size BUSH_SIZE = new Size(FRAME_WIDTH/10, FRAME_WIDTH/10);
