@@ -1,3 +1,3 @@
-# swing-template
+# game-idea
 
-Game template for Java
+Game idea
