@@ -22,7 +22,6 @@ public class MyKeyListener implements KeyListener {
                 switch (it.next()) {
                     case KeyEvent.VK_UP:
                         offset.y = -1;
-                        System.out.println("up");
                         break;
                     case KeyEvent.VK_LEFT:
                         offset.x = -1;
