@@ -15,6 +15,15 @@ public class MyKeyListener implements KeyListener {
 
     public void keyPressed(KeyEvent e) { 
         pressedKeys.add(e.getKeyCode());
+        handleKeys();
+    }
+
+    public void keyReleased(KeyEvent e) { 
+        pressedKeys.remove(e.getKeyCode());
+        handleKeys();
+    }
+
+    public void handleKeys(){
         Point offset = new Point();
         
         if (!pressedKeys.isEmpty()) {
@@ -37,10 +46,6 @@ public class MyKeyListener implements KeyListener {
         }
 
         player.move(offset.x*Player.SPEED, offset.y*Player.SPEED);
-    }
-
-    public void keyReleased(KeyEvent e) { 
-        pressedKeys.remove(e.getKeyCode());
     }
 
     public void keyTyped(KeyEvent e) {
