@@ -20,7 +20,7 @@ public class MyPanel extends JPanel {
     }
 
     public void drawBackground(Graphics2D g2d){
-        g2d.setColor(Constants.GRASS);
+        g2d.setColor(Constants.GRASS_COLOR);
         g2d.fillRect(0, 0, Constants.FRAME_WIDTH, Constants.FRAME_HEIGHT);
     }
 }
