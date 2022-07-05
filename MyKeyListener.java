@@ -44,7 +44,6 @@ public class MyKeyListener implements KeyListener {
                 }
             }
         }
-
         player.move(offset.x*Player.SPEED, offset.y*Player.SPEED);
     }
 
