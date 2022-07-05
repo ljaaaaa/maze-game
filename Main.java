@@ -7,13 +7,15 @@ public class Main {
     public MyMouseListener mouseListener;
     public MyActionListener actionListener;
     public Timer timer;
-    public MyPanel panel;
 
+    public MyPanel panel;
     public Player player;
+    public Background background;
     
     public Main(){
         player = new Player("images/player.png", 50, 50);
-        panel = new MyPanel(player);
+        background = new Background();
+        panel = new MyPanel(background, player);
         
         keyListener = new MyKeyListener(player);
         mouseListener = new MyMouseListener();

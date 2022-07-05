@@ -4,10 +4,12 @@ import java.awt.Graphics2D;
 
 public class MyPanel extends JPanel {
     public Player player;
+    public Background background;
 
-    public MyPanel(Player player){
+    public MyPanel(Background background, Player player){
         setBounds(Constants.FRAME_BOUNDS);
         this.player = player;
+        this.background = background;
     }
 
     @Override
@@ -15,12 +17,7 @@ public class MyPanel extends JPanel {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D)g;
 
-        drawBackground(g2d);
+        background.drawBackground(g2d);
         player.drawItem(g2d);
-    }
-
-    public void drawBackground(Graphics2D g2d){
-        g2d.setColor(Constants.GRASS_COLOR);
-        g2d.fillRect(0, 0, Constants.FRAME_WIDTH, Constants.FRAME_HEIGHT);
     }
 }
