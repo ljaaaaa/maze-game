@@ -22,8 +22,8 @@ public class Background {
     	}
 
 	public void move(int xPlus, int yPlus){
-                //viewX += xPlus;
-                //viewY += yPlus;
+                viewX += xPlus;
+                viewY += yPlus;
 		System.out.println("moving");
         }
 
@@ -50,8 +50,8 @@ public class Background {
 
 		//Grid start square
 		System.out.println(viewX);
-		int startX = Constants.GRID_PIECE / viewX;
-		int startY = Constants.GRID_PIECE / viewY;
+		int startX = Constants.GRID_PIECE / -viewX;
+		int startY = Constants.GRID_PIECE / -viewY;
 
 		System.out.println(startX + " : " + startY);
 
