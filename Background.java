@@ -23,9 +23,9 @@ public class Background {
                 switch (grid[x][y]) {
 
                     case Constants.GRASS:
-                        g2d.setColor(Constants.GRASS_COLOR);
-                        g2d.fillRect(x*Constants.GRID_PIECE, y*Constants.GRID_PIECE, 
-                                        Constants.GRID_PIECE, Constants.GRID_PIECE);
+                        //g2d.setColor(Constants.GRASS_COLOR);
+                        //g2d.fillRect(x*Constants.GRID_PIECE, y*Constants.GRID_PIECE, 
+                        //                Constants.GRID_PIECE, Constants.GRID_PIECE);
                         g2d.setColor(Constants.BUSH_COLOR);
                         g2d.drawRect(x*Constants.GRID_PIECE, y*Constants.GRID_PIECE, 
                                         Constants.GRID_PIECE, Constants.GRID_PIECE);

@@ -19,5 +19,6 @@ public class MyPanel extends JPanel {
 
         background.drawBackground(g2d);
         player.drawItem(g2d);
+    	System.out.println("painting");
     }
 }
