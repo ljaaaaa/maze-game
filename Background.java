@@ -8,15 +8,15 @@ public class Background {
 	private int viewY;
 
 	//Visible width and heights
-        private int paintWidth = Constants.FRAME_WIDTH / Constants.GRID_PIECE;
-        private int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE;
+        private int paintWidth = Constants.FRAME_WIDTH / Constants.GRID_PIECE + 2;
+        private int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE + 2;
 
 
    	public Background(){
         	grid = new char[Constants.GRID_WIDTH][Constants.GRID_HEIGHT];
         	setBackground();
 		grid[10][10] = Constants.FOOD;
-		grid[2][2] = Constants.FOOD;
+		grid[2][2] = Constants.OBSTACLE;
 		viewX = 0;
 		viewY = 0;
     	}
@@ -61,10 +61,12 @@ public class Background {
 	public void paintFood(Graphics2D g2d, int x, int y){
 		g2d.setColor(Constants.APPLE_COLOR);
                 g2d.fillRect(x, y, Constants.GRID_PIECE, Constants.GRID_PIECE);
-
-                g2d.setColor(Constants.APPLE2_COLOR);
-                g2d.drawRect(x, y, Constants.GRID_PIECE, Constants.GRID_PIECE);
 	}
+
+	public void paintObstacle(Graphics2D g2d, int x, int y){
+                g2d.setColor(Constants.BUSH_COLOR);
+                g2d.fillRect(x, y, Constants.GRID_PIECE, Constants.GRID_PIECE);
+        }
 
     	public void drawBackground(Graphics2D g2d){
 		//Grid start square
@@ -72,19 +74,23 @@ public class Background {
 		int startY = -viewY / Constants.GRID_PIECE;
 
 		//Paint visible areas
-        	for (int x = 0; x < paintWidth+1; x++){
-            		for (int y = 0; y < paintHeight+1; y++){
-                		switch (grid[x+startX][y+startY]) { //check out actual grid square (starts at startX)
+        	for (int x = 0; x < paintWidth; x++){
+            		for (int y = 0; y < paintHeight; y++){
+                		switch (grid[x+startX][y+startY]) {
 
                     			case Constants.GRASS:
                         			paintGrass(g2d, (viewX%Constants.GRID_PIECE)+x*Constants.GRID_PIECE, 
                                                                 (viewY%Constants.GRID_PIECE)+y*Constants.GRID_PIECE);
 						break;
 					
-					case Constants.FOOD: //paint using actual x (starts at 0)
+					case Constants.FOOD:
 						paintFood(g2d, (viewX%Constants.GRID_PIECE)+x*Constants.GRID_PIECE, 
 								(viewY%Constants.GRID_PIECE)+y*Constants.GRID_PIECE);
 						break;
+					 case Constants.OBSTACLE:
+                                                paintObstacle(g2d, (viewX%Constants.GRID_PIECE)+x*Constants.GRID_PIECE,
+                                                                (viewY%Constants.GRID_PIECE)+y*Constants.GRID_PIECE);
+                                                break;
 				}
             		}
         	}
