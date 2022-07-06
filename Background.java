@@ -47,20 +47,27 @@ public class Background {
 		int paintWidth = Constants.FRAME_WIDTH / Constants.GRID_PIECE;
 		int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE;
 
-		int gridStartX = 3;
-		int gridStartY = 3;
+		//Start square positions for grid
+		int startX = viewX/Constants.GRID_PIECE;
+		int startY = viewY/Constants.GRID_PIECE;
+
+		//I'm sorry I'll change this formatting later
+		if (startX < 0) startX = 0;
+		if (startY < 0) startY = 0;
+
+		startX = 0; startY = 0;
 
 		//Paint visible areas
-        	for (int x = gridStartX; x < paintWidth; x++){
-            		for (int y = gridStartY; y < paintHeight; y++){
-                		switch (grid[x][y]) {
+        	for (int x = 0; x < paintWidth; x++){
+            		for (int y = 0; y < paintHeight; y++){
+                		switch (grid[x+startX][y+startY]) {
 
                     			case Constants.GRASS:
-                        			paintGrass(g2d, x, y);
+                        			paintGrass(g2d, x+viewX, y+viewY);
 						break;
 					
 					case Constants.FOOD:
-						paintFood(g2d, x, y);
+						paintFood(g2d, x+viewX, y+viewY);
 						break;
 				}
             		}
