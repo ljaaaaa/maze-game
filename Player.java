@@ -17,5 +17,8 @@ public class Player extends Item {
     	public void drawItem(Graphics2D g2d){
         	g2d.setColor(Constants.PLAYER_COLOR);
         	g2d.fillRect(x, y, width, height);
+
+		g2d.setColor(Constants.PLAYER2_COLOR);
+                g2d.drawRect(x, y, width, height);
     	}
 }

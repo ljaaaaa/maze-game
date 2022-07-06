@@ -2,8 +2,15 @@ import java.awt.Graphics2D;
 
 public class Background {
 	public char[][] grid;
+	
+	//Moved coords
 	private int viewX;
 	private int viewY;
+
+	//Visible width and heights
+        private int paintWidth = Constants.FRAME_WIDTH / Constants.GRID_PIECE;
+        private int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE;
+
 
    	public Background(){
         	grid = new char[Constants.GRID_WIDTH][Constants.GRID_HEIGHT];
@@ -26,6 +33,7 @@ public class Background {
                 viewX += xPlus;
                 viewY += yPlus;
 
+		//X-axis in range
 		if (viewX > 0){
 			viewX = 0;
 		
@@ -33,12 +41,11 @@ public class Background {
 			viewY = 0;
 		}
 
-		//Shorten this sometime	
-        	if (-viewX / Constants.GRID_PIECE + Constants.FRAME_WIDTH / Constants.GRID_PIECE >= Constants.GRID_WIDTH){
+		//Y-axis in range
+        	if (-viewX / Constants.GRID_PIECE + paintWidth >= Constants.GRID_WIDTH){
 			viewX -= xPlus;
-		}
-
-		if (-viewY / Constants.GRID_PIECE + Constants.FRAME_HEIGHT / Constants.GRID_PIECE >= Constants.GRID_HEIGHT){
+		
+		} if (-viewY / Constants.GRID_PIECE + paintHeight >= Constants.GRID_HEIGHT){
                         viewY -= yPlus;
                 }
 	}
@@ -60,10 +67,6 @@ public class Background {
 	}
 
     	public void drawBackground(Graphics2D g2d){
-		//Visible width and heights
-		int paintWidth = Constants.FRAME_WIDTH / Constants.GRID_PIECE;
-		int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE;
-
 		//Grid start square
 		int startX = -viewX / Constants.GRID_PIECE;
 		int startY = -viewY / Constants.GRID_PIECE;
