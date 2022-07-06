@@ -48,20 +48,28 @@ public class Background {
 		int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE;
 
 		//Start square positions for grid
-		int startX = 0;
-		int startY = 0;
+		int startX = viewX/Constants.GRID_PIECE;
+		int startY = viewY/Constants.GRID_PIECE;
+
+		//I'm sorry I'll change this formatting later
+		if (startX < 0) startX = 0;
+		if (startY < 0) startY = 0;
+
+		System.out.println(startX + " : " + startY);
 
 		//Paint visible areas
-        	for (int x = 0; x < paintWidth; x++){
-            		for (int y = 0; y < paintHeight; y++){
-                		switch (grid[x+startX][y+startY]) {
+        	for (int x = startX; x < paintWidth+startX; x++){
+            		for (int y = startY; y < paintHeight+startY; y++){
+				int newX = x+startX;
+				int newY = y+startY;
+                		switch (grid[newX][newY]) {
 
                     			case Constants.GRASS:
-                        			paintGrass(g2d, viewX+x*Constants.GRID_PIECE, viewY+y*Constants.GRID_PIECE);
+                        			paintGrass(g2d, viewX+newX*Constants.GRID_PIECE, viewY+newY*Constants.GRID_PIECE);
 						break;
 					
 					case Constants.FOOD:
-						paintFood(g2d, viewX+x*Constants.GRID_PIECE, viewY+y*Constants.GRID_PIECE);
+						paintFood(g2d, viewX+newX*Constants.GRID_PIECE, viewY+newY*Constants.GRID_PIECE);
 						break;
 				}
             		}

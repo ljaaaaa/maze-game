@@ -10,10 +10,14 @@ public class Item {
     	public int height;
     	public String imageName;
 
+	public Item(String imageName){
+		this.imageName = imageName;
+	}
+
     	public Item(String imageName, int x, int y){
-        	this.x = x;
-        	this.y = y;
         	this.imageName = imageName;
+		this.x = x;
+        	this.y = y;
 
         	ImageIcon image = getIcon();
         	setSize(image.getIconWidth(), image.getIconHeight());

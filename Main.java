@@ -13,7 +13,7 @@ public class Main {
     	public Background background;
     
     	public Main(){
-        	player = new Player("images/player.png", 50, 50);
+        	player = new Player("images/player.png");
         	background = new Background();
         	panel = new MyPanel(background, player);
         
