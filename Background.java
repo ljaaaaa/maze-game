@@ -9,8 +9,8 @@ public class Background {
         	grid = new char[Constants.GRID_WIDTH][Constants.GRID_HEIGHT];
         	setBackground();
 		grid[10][10] = Constants.FOOD;
-		int viewX = 0;
-		int viewY = 0;
+		int viewX = 1;
+		int viewY = 1;
     	}
 
     	public void setBackground(){
@@ -24,6 +24,7 @@ public class Background {
 	public void move(int xPlus, int yPlus){
                 viewX += xPlus;
                 viewY += yPlus;
+		System.out.println("moving");
         }
 
 	public void paintGrass(Graphics2D g2d, int x, int y){
@@ -48,22 +49,25 @@ public class Background {
 		int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE;
 
 		//Grid start square
-		int startX = 1;
-		int startY = 1;
+		System.out.println(viewX);
+		int startX = Constants.GRID_PIECE / viewX;
+		int startY = Constants.GRID_PIECE / viewY;
+
+		System.out.println(startX + " : " + startY);
 
 		//Paint visible areas
         	for (int x = 0; x < paintWidth+startX; x++){
             		for (int y = 0; y < paintHeight+startY; y++){
 				int newX = x+startX;
 				int newY = y+startY;
-                		switch (grid[newX][newY]) {
+                		switch (grid[newX][newY]) { //check out actual grid square (starts at startX)
 
                     			case Constants.GRASS:
-                        			paintGrass(g2d, viewX+newX*Constants.GRID_PIECE, viewY+newY*Constants.GRID_PIECE);
+                        			paintGrass(g2d, viewX+x*Constants.GRID_PIECE, viewY+y*Constants.GRID_PIECE);
 						break;
 					
-					case Constants.FOOD:
-						paintFood(g2d, viewX+newX*Constants.GRID_PIECE, viewY+newY*Constants.GRID_PIECE);
+					case Constants.FOOD: //paint using actual x (starts at 0)
+						paintFood(g2d, viewX+x*Constants.GRID_PIECE, viewY+y*Constants.GRID_PIECE);
 						break;
 				}
             		}
