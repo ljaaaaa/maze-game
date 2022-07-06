@@ -9,6 +9,7 @@ public class Background {
         	grid = new char[Constants.GRID_WIDTH][Constants.GRID_HEIGHT];
         	setBackground();
 		grid[10][10] = Constants.FOOD;
+		grid[2][2] = Constants.FOOD;
 		viewX = 0;
 		viewY = 0;
     	}
@@ -31,6 +32,8 @@ public class Background {
 		} if (viewY > 0){
 			viewY = 0;
 		}
+
+		//Out of bounds other way here ->	
         }
 
 	public void paintGrass(Graphics2D g2d, int x, int y){
@@ -59,11 +62,11 @@ public class Background {
 		int startY = -viewY / Constants.GRID_PIECE;
 
 		System.out.println(startX + " : " + startY);
-		System.out.println(viewX + " : " + viewY);
+		System.out.println(viewX);
 
 		//Paint visible areas
-        	for (int x = 0; x < paintWidth+startX; x++){
-            		for (int y = 0; y < paintHeight+startY; y++){
+        	for (int x = 0; x < paintWidth+startX+1; x++){
+            		for (int y = 0; y < paintHeight+startY+1; y++){
 				int newX = x+startX;
 				int newY = y+startY;
                 		switch (grid[newX][newY]) { //check out actual grid square (starts at startX)

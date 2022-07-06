@@ -16,8 +16,8 @@ public class Constants {
 
     	//Background Grid
     	public static final int GRID_PIECE = 50; //Size of each grid square
-    	public static final int GRID_WIDTH = FRAME_WIDTH/4;
-    	public static final int GRID_HEIGHT = FRAME_HEIGHT/4;
+    	public static final int GRID_WIDTH = FRAME_WIDTH/10;
+    	public static final int GRID_HEIGHT = FRAME_HEIGHT/10;
 
     	public static final char GRASS = 'g';
     	public static final char FOOD = 'f';
