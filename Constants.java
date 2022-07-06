@@ -13,7 +13,7 @@ public class Constants {
     public static final Color BUSH_COLOR = new Color(27, 117, 54);
 
     //Background Grid
-    public static final int GRID_PIECE = 1; //Size of each grid square
+    public static final int GRID_PIECE = 50; //Size of each grid square
     public static final int GRID_WIDTH = FRAME_WIDTH;
     public static final int GRID_HEIGHT = FRAME_HEIGHT;
 

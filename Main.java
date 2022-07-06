@@ -38,7 +38,7 @@ public class Main {
         f.add(panel);
 
         f.setLocationRelativeTo(null);
-        f.setResizable(false);
+        f.setResizable(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
 

@@ -13,6 +13,5 @@ public class MyActionListener implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) { 
         panel.repaint();   
-	System.out.println("HERE");
     }
 }
