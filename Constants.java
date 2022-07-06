@@ -10,7 +10,9 @@ public class Constants {
     //Colors
     public static final Color PLAYER_COLOR = new Color(255, 0, 0);
     public static final Color GRASS_COLOR = new Color(132, 191, 119);
-    public static final Color BUSH_COLOR = new Color(27, 117, 54);
+    public static final Color GRASS2_COLOR = new Color(27, 117, 54);
+    public static final Color APPLE_COLOR = new Color(200, 0, 0);
+    public static final Color APPLE2_COLOR = new Color(255, 0, 0);
 
     //Background Grid
     public static final int GRID_PIECE = 50; //Size of each grid square
