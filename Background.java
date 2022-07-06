@@ -33,8 +33,15 @@ public class Background {
 			viewY = 0;
 		}
 
-		//Out of bounds other way here ->	
-        }
+		//Shorten this sometime	
+        	if (-viewX / Constants.GRID_PIECE + Constants.FRAME_WIDTH / Constants.GRID_PIECE >= Constants.GRID_WIDTH){
+			viewX -= xPlus;
+		}
+
+		if (-viewY / Constants.GRID_PIECE + Constants.FRAME_HEIGHT / Constants.GRID_PIECE >= Constants.GRID_HEIGHT){
+                        viewY -= yPlus;
+                }
+	}
 
 	public void paintGrass(Graphics2D g2d, int x, int y){
 		g2d.setColor(Constants.GRASS_COLOR);
@@ -62,8 +69,8 @@ public class Background {
 		int startY = -viewY / Constants.GRID_PIECE;
 
 		//Paint visible areas
-        	for (int x = 0; x < paintWidth+startX+1; x++){
-            		for (int y = 0; y < paintHeight+startY+1; y++){
+        	for (int x = 0; x < paintWidth+1; x++){
+            		for (int y = 0; y < paintHeight+1; y++){
                 		switch (grid[x+startX][y+startY]) { //check out actual grid square (starts at startX)
 
                     			case Constants.GRASS:
