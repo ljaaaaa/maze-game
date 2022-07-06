@@ -61,22 +61,19 @@ public class Background {
 		int startX = -viewX / Constants.GRID_PIECE;
 		int startY = -viewY / Constants.GRID_PIECE;
 
-		System.out.println(startX + " : " + startY);
-		System.out.println(viewX);
-
 		//Paint visible areas
         	for (int x = 0; x < paintWidth+startX+1; x++){
             		for (int y = 0; y < paintHeight+startY+1; y++){
-				int newX = x+startX;
-				int newY = y+startY;
-                		switch (grid[newX][newY]) { //check out actual grid square (starts at startX)
+                		switch (grid[x+startX][y+startY]) { //check out actual grid square (starts at startX)
 
                     			case Constants.GRASS:
-                        			paintGrass(g2d, viewX+x*Constants.GRID_PIECE, viewY+y*Constants.GRID_PIECE);
+                        			paintGrass(g2d, (viewX%Constants.GRID_PIECE)+x*Constants.GRID_PIECE, 
+                                                                (viewY%Constants.GRID_PIECE)+y*Constants.GRID_PIECE);
 						break;
 					
 					case Constants.FOOD: //paint using actual x (starts at 0)
-						paintFood(g2d, viewX+x*Constants.GRID_PIECE, viewY+y*Constants.GRID_PIECE);
+						paintFood(g2d, (viewX%Constants.GRID_PIECE)+x*Constants.GRID_PIECE, 
+								(viewY%Constants.GRID_PIECE)+y*Constants.GRID_PIECE);
 						break;
 				}
             		}
