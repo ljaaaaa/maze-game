@@ -47,19 +47,13 @@ public class Background {
 		int paintWidth = Constants.FRAME_WIDTH / Constants.GRID_PIECE;
 		int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE;
 
-		//Start square positions for grid
-		int startX = viewX/Constants.GRID_PIECE;
-		int startY = viewY/Constants.GRID_PIECE;
-
-		//I'm sorry I'll change this formatting later
-		if (startX < 0) startX = 0;
-		if (startY < 0) startY = 0;
-
-		System.out.println(startX + " : " + startY);
+		//Grid start square
+		int startX = 1;
+		int startY = 1;
 
 		//Paint visible areas
-        	for (int x = startX; x < paintWidth+startX; x++){
-            		for (int y = startY; y < paintHeight+startY; y++){
+        	for (int x = 0; x < paintWidth+startX; x++){
+            		for (int y = 0; y < paintHeight+startY; y++){
 				int newX = x+startX;
 				int newY = y+startY;
                 		switch (grid[newX][newY]) {
