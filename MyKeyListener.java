@@ -30,16 +30,16 @@ public class MyKeyListener implements KeyListener {
             		for (Iterator<Integer> it = pressedKeys.iterator(); it.hasNext();) {
                 		switch (it.next()) {
                     			case KeyEvent.VK_UP:
-                        			offset.y-=1;
-                        			break;
-                    			case KeyEvent.VK_LEFT:
-                        			offset.x-=1;
-                        			break;
-                    			case KeyEvent.VK_DOWN:
                         			offset.y+=1;
                         			break;
-                    			case KeyEvent.VK_RIGHT:
+                    			case KeyEvent.VK_LEFT:
                         			offset.x+=1;
+                        			break;
+                    			case KeyEvent.VK_DOWN:
+                        			offset.y-=1;
+                        			break;
+                    			case KeyEvent.VK_RIGHT:
+                        			offset.x-=1;
                         			break;
                 		}
             		}

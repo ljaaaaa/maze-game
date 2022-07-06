@@ -9,8 +9,8 @@ public class Background {
         	grid = new char[Constants.GRID_WIDTH][Constants.GRID_HEIGHT];
         	setBackground();
 		grid[10][10] = Constants.FOOD;
-		viewX = 1;
-		viewY = 1;
+		viewX = 0;
+		viewY = 0;
     	}
 
     	public void setBackground(){
@@ -24,6 +24,13 @@ public class Background {
 	public void move(int xPlus, int yPlus){
                 viewX += xPlus;
                 viewY += yPlus;
+
+		if (viewX > 0){
+			viewX = 0;
+		
+		} if (viewY > 0){
+			viewY = 0;
+		}
         }
 
 	public void paintGrass(Graphics2D g2d, int x, int y){
@@ -48,12 +55,8 @@ public class Background {
 		int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE;
 
 		//Grid start square
-		int startX = Constants.GRID_PIECE / viewX / Constants.GRID_PIECE;
-		int startY = Constants.GRID_PIECE / viewY / Constants.GRID_PIECE;
-
-		//I'm sorry I'll change this formatting later
-		if (startX < 0) startX = 0;
-		if (startY < 0) startY = 0;
+		int startX = viewX / Constants.GRID_PIECE;
+		int startY = viewY / Constants.GRID_PIECE;
 
 		System.out.println(startX + " : " + startY);
 
@@ -65,11 +68,11 @@ public class Background {
                 		switch (grid[newX][newY]) { //check out actual grid square (starts at startX)
 
                     			case Constants.GRASS:
-                        			paintGrass(g2d, viewX-1+x*Constants.GRID_PIECE, viewY-1+y*Constants.GRID_PIECE);
+                        			paintGrass(g2d, viewX+x*Constants.GRID_PIECE, viewY+y*Constants.GRID_PIECE);
 						break;
 					
 					case Constants.FOOD: //paint using actual x (starts at 0)
-						paintFood(g2d, viewX-1+x*Constants.GRID_PIECE, viewY-1+y*Constants.GRID_PIECE);
+						paintFood(g2d, viewX+x*Constants.GRID_PIECE, viewY+y*Constants.GRID_PIECE);
 						break;
 				}
             		}
