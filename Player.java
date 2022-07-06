@@ -17,11 +17,6 @@ public class Player extends Item {
         	this.y = Constants.FRAME_HEIGHT/2 - this.height/2;
     	}
 
-    	public void move(int xPlus, int yPlus){
-        	this.x += xPlus;
-        	this.y += yPlus;
-    	}
-
     	@Override
     	public void drawItem(Graphics2D g2d){
         	g2d.setColor(Constants.PLAYER_COLOR);

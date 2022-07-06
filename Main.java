@@ -17,7 +17,7 @@ public class Main {
         	background = new Background();
         	panel = new MyPanel(background, player);
         
-        	keyListener = new MyKeyListener(player);
+        	keyListener = new MyKeyListener(background);
         	mouseListener = new MyMouseListener();
         	actionListener = new MyActionListener(panel);
         	timer = new Timer(MyActionListener.DELAY, actionListener);

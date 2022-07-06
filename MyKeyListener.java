@@ -6,11 +6,11 @@ import java.awt.event.KeyEvent;
 import java.awt.Point;
 
 public class MyKeyListener implements KeyListener {
-    	public Player player;
+    	public Background background;
     	public final Set<Integer> pressedKeys = new HashSet<>();
 
-    	public MyKeyListener(Player player) {
-        	this.player = player;
+    	public MyKeyListener(Background background) {
+        	this.background = background;
     	}
 
     	public void keyPressed(KeyEvent e) { 
@@ -30,21 +30,21 @@ public class MyKeyListener implements KeyListener {
             		for (Iterator<Integer> it = pressedKeys.iterator(); it.hasNext();) {
                 		switch (it.next()) {
                     			case KeyEvent.VK_UP:
-                        			offset.y-=1;
-                        			break;
-                    			case KeyEvent.VK_LEFT:
-                        			offset.x-=1;
-                        			break;
-                    			case KeyEvent.VK_DOWN:
                         			offset.y+=1;
                         			break;
-                    			case KeyEvent.VK_RIGHT:
+                    			case KeyEvent.VK_LEFT:
                         			offset.x+=1;
+                        			break;
+                    			case KeyEvent.VK_DOWN:
+                        			offset.y-=1;
+                        			break;
+                    			case KeyEvent.VK_RIGHT:
+                        			offset.x-=1;
                         			break;
                 		}
             		}
         	}
-        	player.move(offset.x*Player.SPEED, offset.y*Player.SPEED);
+        	background.move(offset.x*Player.SPEED, offset.y*Player.SPEED);
     	}
 
     	public void keyTyped(KeyEvent e) {
