@@ -17,8 +17,8 @@ public class MyPanel extends JPanel {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D)g;
 
-        background.drawBackground(g2d);
+        //background.drawBackground(g2d);
         player.drawItem(g2d);
-    	System.out.println("painting");
+    	System.out.println("paint");
     }
 }
