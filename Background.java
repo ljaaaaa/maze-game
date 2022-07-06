@@ -28,18 +28,18 @@ public class Background {
 
 	public void paintGrass(Graphics2D g2d, int x, int y){
 		g2d.setColor(Constants.GRASS_COLOR);
-                g2d.fillRect(x*Constants.GRID_PIECE, y*Constants.GRID_PIECE, Constants.GRID_PIECE, Constants.GRID_PIECE);
+                g2d.fillRect(x, y, Constants.GRID_PIECE, Constants.GRID_PIECE);
 
                	g2d.setColor(Constants.GRASS2_COLOR);
-                g2d.drawRect(x*Constants.GRID_PIECE, y*Constants.GRID_PIECE, Constants.GRID_PIECE, Constants.GRID_PIECE);
+                g2d.drawRect(x, y, Constants.GRID_PIECE, Constants.GRID_PIECE);
 	}
 
 	public void paintFood(Graphics2D g2d, int x, int y){
 		g2d.setColor(Constants.APPLE_COLOR);
-                g2d.fillRect(x*Constants.GRID_PIECE, y*Constants.GRID_PIECE, Constants.GRID_PIECE, Constants.GRID_PIECE);
+                g2d.fillRect(x, y, Constants.GRID_PIECE, Constants.GRID_PIECE);
 
                 g2d.setColor(Constants.APPLE2_COLOR);
-                g2d.drawRect(x*Constants.GRID_PIECE, y*Constants.GRID_PIECE, Constants.GRID_PIECE, Constants.GRID_PIECE);
+                g2d.drawRect(x, y, Constants.GRID_PIECE, Constants.GRID_PIECE);
 	}
 
     	public void drawBackground(Graphics2D g2d){
@@ -48,14 +48,8 @@ public class Background {
 		int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE;
 
 		//Start square positions for grid
-		int startX = viewX/Constants.GRID_PIECE;
-		int startY = viewY/Constants.GRID_PIECE;
-
-		//I'm sorry I'll change this formatting later
-		if (startX < 0) startX = 0;
-		if (startY < 0) startY = 0;
-
-		startX = 0; startY = 0;
+		int startX = 0;
+		int startY = 0;
 
 		//Paint visible areas
         	for (int x = 0; x < paintWidth; x++){
@@ -63,11 +57,11 @@ public class Background {
                 		switch (grid[x+startX][y+startY]) {
 
                     			case Constants.GRASS:
-                        			paintGrass(g2d, x+viewX, y+viewY);
+                        			paintGrass(g2d, viewX+x*Constants.GRID_PIECE, viewY+y*Constants.GRID_PIECE);
 						break;
 					
 					case Constants.FOOD:
-						paintFood(g2d, x+viewX, y+viewY);
+						paintFood(g2d, viewX+x*Constants.GRID_PIECE, viewY+y*Constants.GRID_PIECE);
 						break;
 				}
             		}
