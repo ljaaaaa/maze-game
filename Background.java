@@ -24,7 +24,6 @@ public class Background {
 	public void move(int xPlus, int yPlus){
                 viewX += xPlus;
                 viewY += yPlus;
-		System.out.println("moving");
         }
 
 	public void paintGrass(Graphics2D g2d, int x, int y){
@@ -49,9 +48,12 @@ public class Background {
 		int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE;
 
 		//Grid start square
-		System.out.println(viewX);
-		int startX = Constants.GRID_PIECE / -viewX;
-		int startY = Constants.GRID_PIECE / -viewY;
+		int startX = Constants.GRID_PIECE / viewX / Constants.GRID_PIECE;
+		int startY = Constants.GRID_PIECE / viewY / Constants.GRID_PIECE;
+
+		//I'm sorry I'll change this formatting later
+		if (startX < 0) startX = 0;
+		if (startY < 0) startY = 0;
 
 		System.out.println(startX + " : " + startY);
 
@@ -63,11 +65,11 @@ public class Background {
                 		switch (grid[newX][newY]) { //check out actual grid square (starts at startX)
 
                     			case Constants.GRASS:
-                        			paintGrass(g2d, viewX+x*Constants.GRID_PIECE, viewY+y*Constants.GRID_PIECE);
+                        			paintGrass(g2d, viewX-1+x*Constants.GRID_PIECE, viewY-1+y*Constants.GRID_PIECE);
 						break;
 					
 					case Constants.FOOD: //paint using actual x (starts at 0)
-						paintFood(g2d, viewX+x*Constants.GRID_PIECE, viewY+y*Constants.GRID_PIECE);
+						paintFood(g2d, viewX-1+x*Constants.GRID_PIECE, viewY-1+y*Constants.GRID_PIECE);
 						break;
 				}
             		}
