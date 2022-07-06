@@ -55,10 +55,11 @@ public class Background {
 		int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE;
 
 		//Grid start square
-		int startX = viewX / Constants.GRID_PIECE;
-		int startY = viewY / Constants.GRID_PIECE;
+		int startX = -viewX / Constants.GRID_PIECE;
+		int startY = -viewY / Constants.GRID_PIECE;
 
 		System.out.println(startX + " : " + startY);
+		System.out.println(viewX + " : " + viewY);
 
 		//Paint visible areas
         	for (int x = 0; x < paintWidth+startX; x++){
