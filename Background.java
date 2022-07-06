@@ -19,10 +19,11 @@ public class Background {
 
     public void drawBackground(Graphics2D g2d){
 	
-	//Only paint the VISIBLE section of grid
+	//Visible width and heights
 	int paintWidth = Constants.FRAME_WIDTH / Constants.GRID_PIECE;
 	int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE;
 
+	//Paint visible areas
         for (int x = 0; x < paintWidth; x++){
             for (int y = 0; y < paintHeight; y++){
                 switch (grid[x][y]) {
