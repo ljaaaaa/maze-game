@@ -2,15 +2,15 @@ import java.awt.Graphics2D;
 
 public class Background {
 	public char[][] grid;
-	public int viewX;
-	public int viewY;
+	private int viewX;
+	private int viewY;
 
    	public Background(){
         	grid = new char[Constants.GRID_WIDTH][Constants.GRID_HEIGHT];
         	setBackground();
 		grid[10][10] = Constants.FOOD;
-		int viewX = 1;
-		int viewY = 1;
+		viewX = 1;
+		viewY = 1;
     	}
 
     	public void setBackground(){
@@ -22,8 +22,8 @@ public class Background {
     	}
 
 	public void move(int xPlus, int yPlus){
-                viewX += xPlus;
-                viewY += yPlus;
+                //viewX += xPlus;
+                //viewY += yPlus;
 		System.out.println("moving");
         }
 
