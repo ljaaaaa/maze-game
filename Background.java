@@ -8,15 +8,15 @@ public class Background {
 	private int viewY;
 
 	//Visible width and heights
-        private int paintWidth = Constants.FRAME_WIDTH / Constants.GRID_PIECE + 2;
-        private int paintHeight = Constants.FRAME_HEIGHT / Constants.GRID_PIECE + 2;
+        private int paintWidth = Constants.Frame.WIDTH / Constants.Grid.PIECE + 2;
+        private int paintHeight = Constants.Frame.HEIGHT / Constants.Grid.PIECE + 2;
 
 
    	public Background(){
-        	grid = new char[Constants.GRID_WIDTH][Constants.GRID_HEIGHT];
+        	grid = new char[Constants.Grid.WIDTH][Constants.Grid.HEIGHT];
         	setBackground();
-		grid[10][10] = Constants.FOOD;
-		grid[2][2] = Constants.OBSTACLE;
+		grid[10][10] = Constants.Grid.FOOD;
+		grid[2][2] = Constants.Grid.OBSTACLE;
 		viewX = 0;
 		viewY = 0;
     	}
@@ -24,7 +24,7 @@ public class Background {
     	public void setBackground(){
         	for (int x = 0; x < grid.length; x++){
             		for (int y = 0; y < grid[x].length; y++){
-                		grid[x][y] = Constants.GRASS;
+                		grid[x][y] = Constants.Grid.GRASS;
             		}
         	}
     	}
@@ -42,54 +42,54 @@ public class Background {
 		}
 
 		//Y-axis in range
-        	if (-viewX / Constants.GRID_PIECE + paintWidth >= Constants.GRID_WIDTH){
+        	if (-viewX / Constants.Grid.PIECE + paintWidth >= Constants.Grid.WIDTH){
 			viewX -= xPlus;
 		
-		} if (-viewY / Constants.GRID_PIECE + paintHeight >= Constants.GRID_HEIGHT){
+		} if (-viewY / Constants.Grid.PIECE + paintHeight >= Constants.Grid.HEIGHT){
                         viewY -= yPlus;
                 }
 	}
 
 	public void paintGrass(Graphics2D g2d, int x, int y){
-		g2d.setColor(Constants.GRASS_COLOR);
-                g2d.fillRect(x, y, Constants.GRID_PIECE, Constants.GRID_PIECE);
+		g2d.setColor(Constants.Colors.GRASS);
+                g2d.fillRect(x, y, Constants.Grid.PIECE, Constants.Grid.PIECE);
 
-               	g2d.setColor(Constants.GRASS2_COLOR);
-                g2d.drawRect(x, y, Constants.GRID_PIECE, Constants.GRID_PIECE);
+               	g2d.setColor(Constants.Colors.GRASS2);
+                g2d.drawRect(x, y, Constants.Grid.PIECE, Constants.Grid.PIECE);
 	}
 
 	public void paintFood(Graphics2D g2d, int x, int y){
-		g2d.setColor(Constants.APPLE_COLOR);
-                g2d.fillRect(x, y, Constants.GRID_PIECE, Constants.GRID_PIECE);
+		g2d.setColor(Constants.Colors.APPLE);
+                g2d.fillRect(x, y, Constants.Grid.PIECE, Constants.Grid.PIECE);
 	}
 
 	public void paintObstacle(Graphics2D g2d, int x, int y){
-                g2d.setColor(Constants.BUSH_COLOR);
-                g2d.fillRect(x, y, Constants.GRID_PIECE, Constants.GRID_PIECE);
+                g2d.setColor(Constants.Colors.BUSH);
+                g2d.fillRect(x, y, Constants.Grid.PIECE, Constants.Grid.PIECE);
         }
 
     	public void drawBackground(Graphics2D g2d){
 		//Grid start square
-		int startX = -viewX / Constants.GRID_PIECE;
-		int startY = -viewY / Constants.GRID_PIECE;
+		int startX = -viewX / Constants.Grid.PIECE;
+		int startY = -viewY / Constants.Grid.PIECE;
 
 		//Paint visible areas
         	for (int x = 0; x < paintWidth; x++){
             		for (int y = 0; y < paintHeight; y++){
                 		switch (grid[x+startX][y+startY]) {
 
-                    			case Constants.GRASS:
-                        			paintGrass(g2d, (viewX%Constants.GRID_PIECE)+x*Constants.GRID_PIECE, 
-                                                                (viewY%Constants.GRID_PIECE)+y*Constants.GRID_PIECE);
+                    			case Constants.Grid.GRASS:
+                        			paintGrass(g2d, (viewX%Constants.Grid.PIECE)+x*Constants.Grid.PIECE, 
+                                                                (viewY%Constants.Grid.PIECE)+y*Constants.Grid.PIECE);
 						break;
 					
-					case Constants.FOOD:
-						paintFood(g2d, (viewX%Constants.GRID_PIECE)+x*Constants.GRID_PIECE, 
-								(viewY%Constants.GRID_PIECE)+y*Constants.GRID_PIECE);
+					case Constants.Grid.FOOD:
+						paintFood(g2d, (viewX%Constants.Grid.PIECE)+x*Constants.Grid.PIECE, 
+								(viewY%Constants.Grid.PIECE)+y*Constants.Grid.PIECE);
 						break;
-					 case Constants.OBSTACLE:
-                                                paintObstacle(g2d, (viewX%Constants.GRID_PIECE)+x*Constants.GRID_PIECE,
-                                                                (viewY%Constants.GRID_PIECE)+y*Constants.GRID_PIECE);
+					 case Constants.Grid.OBSTACLE:
+                                                paintObstacle(g2d, (viewX%Constants.Grid.PIECE)+x*Constants.Grid.PIECE,
+                                                                (viewY%Constants.Grid.PIECE)+y*Constants.Grid.PIECE);
                                                 break;
 				}
             		}

@@ -44,7 +44,7 @@ public class MyKeyListener implements KeyListener {
                 		}
             		}
         	}
-        	background.move(offset.x*Player.SPEED, offset.y*Player.SPEED);
+        	background.move(offset.x*Constants.Player.SPEED, offset.y*Constants.Player.SPEED);
     	}
 
     	public void keyTyped(KeyEvent e) {

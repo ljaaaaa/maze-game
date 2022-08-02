@@ -7,7 +7,7 @@ public class MyPanel extends JPanel {
     	public Background background;
 
     	public MyPanel(Background background, Player player){
-        	setBounds(Constants.FRAME_BOUNDS);
+        	setBounds(Constants.Frame.BOUNDS);
         	this.player = player;
         	this.background = background;
     	}
