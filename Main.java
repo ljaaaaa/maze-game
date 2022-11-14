@@ -25,7 +25,7 @@ public class Main {
     	}
 
     	public void setUpFrame(){
-        	JFrame f = new JFrame("Game");
+        	JFrame f = new JFrame("Maze Game");
         	f.setIconImage(new ImageIcon("images/image.png").getImage());
         	f.setSize(Constants.Frame.WIDTH, Constants.Frame.HEIGHT+37);
         	f.setLayout(null);

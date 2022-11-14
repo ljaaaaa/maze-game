@@ -32,7 +32,7 @@ public class Constants {
 	public static class Player {
 		public static final int SPEED = 10;
         	public static final int WIDTH = Constants.Grid.PIECE;
-	        public static final int HEIGHT = Constants.Grid.PIECE * 2;
+	        public static final int HEIGHT = (int)(Constants.Grid.PIECE * 1.5);
 		public static final Color COLOR = new Color(0, 0, 255);
 	}
 }
