@@ -1,3 +1,3 @@
-# game-idea
+# unfinished-maze-game
 
-Game idea
+Game idea involving a map with squares
