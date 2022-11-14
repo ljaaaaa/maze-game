@@ -1,4 +1,4 @@
-# unfinished-maze-game
+# incomplete-maze-game
 
 Game idea involving a map with squares
 
